@@ -23,17 +23,23 @@ Furthermore, we owe visibility to the content creators who make our platforms po
 
 
 ## Data Understanding
-In 2006 netflix hosted a competition to see who could beat their best model.
-
-I used this data for my project. 
+In 2006, Netflix hosted a [competition](https://en.wikipedia.org/wiki/Netflix_Prize) to see who could beat their best model. I used this data for my project. 
 
 The original dataset contains over 100M rows, but with my limited resources I had to sample 1 Million Rows of this data.
 
-My sample contains 1 Million radomly selected ratings of 17,770 movies, shorts, and shows from 290k users.
+My sample contains 1 Million radomly selected ratings of 17,770 movies, shorts, and shows from 290,022 users.
 
 ### Data Limitations
 
-The data was collected from end of 1999 to end of 2005 so it is out of date and I was only provided with a rating from 1-5, the date of rating, and the video release date which ranged anywhere from 1898 to 2004 
+The data was collected from end of 1999 to end of 2005 so it is out of date and I was only provided with a rating from 1-5, the date of rating, and the video release date which ranged anywhere from 1898 to 2005.
+
+### Initial Diversity Analysis
+
+The data itself does not contain very diverse observations. 
+- The vast majority of content was released from 2000-2005.
+- User engagement is low as most users only rated once.
+- The content itself only contains 12.4% of Top (2) Billed Cast, Director, or Writer(s) are a minority. White women count as minorities in this instance as they are also underrepresented in the above categories.
+
 
 
 ## Preprocessing

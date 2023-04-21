@@ -1,4 +1,4 @@
-# Exploring Diversity Within Recommendation Systems
+# Infusing Intentional Diversity within Recommendation Systems
 
 Author: Leo Schell Villanueva
 
@@ -40,26 +40,78 @@ The data itself does not contain very diverse observations.
 - User engagement is low as most users only rated once.
 - The content itself only contains 12.4% of Top (2) Billed Cast, Director, or Writer(s) are a minority. White women count as minorities in this instance as they are also underrepresented in the above categories.
 
-
-
 ## Preprocessing
 
 In order to better understand how user preferences evolve with time, I employed an 'Out of Time' data split that is typically used with content recommendation systems. 
 
 You can learn more about this split in an article by [Tomas Dvorak on Medium](https://towardsdatascience.com/why-isnt-out-of-time-validation-more-ubiquitous-7397098c4ab6).
 
+# Models
+
+I took a lot of inspiration from Netflix throughout this project. The platform uses many different algorithms because there is a time and place for each type of recommendation. 
+
+With the resources and time that I had available, I was able to create a personalized video ranker and a video-to-video recommendation list. 
+
 ## Baseline Model - Biased Baseline
+
+In this project, I initially drew a lot of inspiration from the [Balkor](http://snap.stanford.edu/class/cs246-2015/slides/08-recsys2.pdf) solution for the Netflix Prize as this is an academic exercise and I am seeking to understand recommendation systems on a granular level.
+
+This was the baseline model they used. Predictions are calculated using the following formula:
+
+    rᵤᵢ=μ + bᵤ + bᵢ
+
+Essentially, this model operates on the assumption that you can predict a user's rating based on their natural bias. In layman's terms:
+
+User's Rating = (mean ratings for the entire sample) + (the difference in how a user tends to rate videos) + (the difference in the content's own average rating)
 
 
 ## Personal Video Ranker
 
+Historically, collaborative filtering models have been a large part of recommender algorithms. Personal video rankers, collaborative filtering models that seek to predict the content a user will rate highly, usually take prominent places in different capacities on all content delivery platforms.
+
+Following is my best Singular Value Decomposition algorithm, using SVD++ from the same package.
 
 ## Video To Video Ranker
 
-We used support vector machine classifier to help with the imbalance of the data. Some scores here did the best yet, however we wont use this model as its most prone to overfitting. The train score was 77% which was great to see but the test score was 56%. Precision score did about as well as our baseline at 57%.
+In order to promote content diversity, content delivery platforms usually employ models that connect users with content that is similar to what they have been exposed to already.
+
+These models are trained only to examine the similarities between the content available.
+
+I used the kNNBaseline model from the Python Surprise package to start and have left my best performing iteration from there.
 
 ## Final Recommender
 
-I'm really excited about this since it's the most code I've ever written and the rest of this repo is forthcoming.
+This begins with the Personalized Video Ranker. If a user's personalized recommendations don't contain a video that meets the minority requirement, the algorithm identify nearest neighbors for the top 10 videos output in the the user's personalized video recommendations.
+
+The algorithm then checks for movies in this pre-curated list of Will Smith, Lucy Liu, and Jennifer Lopez movies:
+
+Will Smith:
+
+Hitch (2005): 17324
+Shark Tale (2004): 5345
+Bad Boys (1995): 2186
+Lucy Liu:
+
+Mulan 2 (2004): 13836
+Charlie's Angels (2000): 6552
+Jennifer Lopez:
+
+Maid in Manhattan (2002): 11149
+Out of Sight (1998): 13486
+I have chosen these celebrities as they were very popular in 2005 and tested well in markets throughout middle America and internationally.
+
+If any of the above movies are present among the nearest neighbors, it will boost that movie to the 3rd recommendation in the personal video recommendations.
+
+If none are present, the algorithm will insert Men In Black (2002) as the 3rd recommendation in the personal video recommendations.
+
+Holdout Will Smith Movie:
+
+Men In Black (2002): 12918
 
 ## Conclusion and Looking Ahead
+
+This was an academic exercise and I only used algorithms that are used by small businesses and entry level data scientists.
+
+Going forward, I want to get better acquainted with deep learning techniques and the way that major content platforms implement different regularization techniques that impact diversity.
+
+I also look forward to working with bigger more contemporary datasets.

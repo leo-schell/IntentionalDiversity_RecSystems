@@ -1,10 +1,16 @@
-# Infusing Intentional Diversity within Recommendation Systems
+![readme_cover](https://github.com/leo-schell/IntentionalDiversity_RecSystems/assets/122314061/230bef90-8cb0-414f-9ee6-78a0354634cf)
 
-Author: Leo Schell Villanueva
+By Leo Schell Villanueva
 
-This project is an academic exercise for my Capstone project as a part of Flatiron School's Data Science Certification Program.
+If you are chronically online like me, you've probably noticed that social media algorithms tend to niche down really quickly. For example, I don't know how I ended up on Scottish Sheep Farmer TikTok, but I'm invested. My favorite farmer posts weekly updates of his dog Katie and her sheep and it's great.
 
-I have elected to examine content diversity within simple recommendation systems using SciKit's Surprise package for Python.
+However, there was a period of time where the vast majority of content recommended to me was about Scottish sheep. No other sheep, just scottish sheep.
+
+Moments like this can be frustrating for users. From racial diversity to content diversity, we know that all content-driven platforms can do better.
+
+As data scientists, we participate in this conversation in the form of building infrastructure that allows users to access interesting and novel content. 
+
+This project is a study in promoting different kinds of diversity within simple recommendation algorithms.
 
 ## Overview and Background
 ### Bottom Line: Audiences don't care about accurate predictions.

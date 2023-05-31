@@ -2,17 +2,16 @@
 
 By Leo Schell Villanueva
 
-If you are chronically online like me, you've probably noticed that social media algorithms tend to niche down really quickly. For example, I don't know how I ended up on Scottish Sheep Farmer TikTok, but I'm invested. My favorite farmer posts weekly updates of his dog Katie and her sheep and it's great.
+## Overview
+This project is a study in promoting different kinds of diversity within simple recommendation algorithms on content based platforms like legacy media and social media.
 
-However, there was a period of time where the vast majority of content recommended to me was about Scottish sheep. No other sheep, just scottish sheep.
+If you are chronically online like I am, you've probably noticed that social media algorithms tend to niche down really quickly. For example, I don't know how I ended up on Scottish Sheep Farmer TikTok, but it is an absolute delight. My favorite farmer, [@seanthesheepman](https://www.tiktok.com/@seanthesheepman?lang=en), posts weekly updates of his dog Katie and through his content my world has become a little richer.
 
-Moments like this can be frustrating for users. From racial diversity to content diversity, we know that all content-driven platforms can do better.
+However, there was a period of time where the vast majority of content recommended to me was about Scottish sheep. No other sheep, just Scottish sheep. Moments like this can be frustrating for users. **From racial diversity to content diversity, we know that all content-driven platforms can do better.**
 
-As data scientists, we participate in this conversation in the form of building infrastructure that allows users to access interesting and novel content. 
+As data professionals, we participate in this conversation in the form of building infrastructure that allows users to access interesting and novel content. In this project, I examine simple recommendation algorithms that are similar to those used by Netflix built using scikit-learn Surprise for racial and content diversity. I then use those results to construct an easy solution to the major problems these algorithms face.
 
-This project is a study in promoting different kinds of diversity within simple recommendation algorithms.
-
-## Overview and Background
+## Background
 ### Bottom Line: Audiences don't care about accurate predictions.
 
 Early recommendation algorithms were evaluated based on accuracy.
@@ -49,8 +48,6 @@ The data itself does not contain very diverse observations.
 ## Preprocessing
 
 In order to better understand how user preferences evolve with time, I employed an 'Out of Time' data split that is typically used with content recommendation systems. 
-
-You can learn more about this split in an article by [Tomas Dvorak on Medium](https://towardsdatascience.com/why-isnt-out-of-time-validation-more-ubiquitous-7397098c4ab6).
 
 # Models
 

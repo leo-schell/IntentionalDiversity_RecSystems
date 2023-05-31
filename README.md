@@ -9,7 +9,14 @@ If you are chronically online like I am, you've probably noticed that social med
 
 However, there was a period of time where the vast majority of content recommended to me was about Scottish sheep. No other sheep, just Scottish sheep. Moments like this can be frustrating for users. **From racial diversity to content diversity, we know that all content-driven platforms can do better.**
 
-As data professionals, we participate in this conversation in the form of building infrastructure that allows users to access interesting and novel content. In this project, I examine simple recommendation algorithms that are similar to those used by Netflix built using scikit-learn Surprise for racial and content diversity. I then use those results to construct an easy solution to the major problems these algorithms face.
+As data professionals, we participate in this conversation in the form of building infrastructure that allows users to access interesting and novel content. In this project, I examine simple recommendation algorithms that are similar to those used by Netflix built using [scikit Surprise](https://surpriselib.com/) for racial and content diversity. I then use those results to construct an easy solution to the major problems these algorithms face.
+
+**Table of Contents**
+- [Background](#background)
+- [Data Understanding](#data-understanding)
+- [Models Analyzed](#models-analyzed)
+- [Final Recommender](#final-recommender)
+- [Conclusion](#conclusion)
 
 ## Background
 ### Bottom Line: Audiences don't care about accurate predictions.
@@ -49,7 +56,7 @@ The data itself does not contain very diverse observations.
 
 In order to better understand how user preferences evolve with time, I employed an 'Out of Time' data split that is typically used with content recommendation systems. 
 
-# Models
+# Models Analyzed
 
 I took a lot of inspiration from Netflix throughout this project. The platform uses many different algorithms because there is a time and place for each type of recommendation. 
 

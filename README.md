@@ -21,31 +21,22 @@ As data professionals, we participate in this conversation in the form of buildi
 ## Background
 ### Bottom Line: Audiences don't care about accurate predictions.
 
-Early recommendation algorithms were evaluated based on accuracy.
-
-However more often than not, showing a user recommendations we're sure they're going to rate 5 stars makes for a boring platform.
+Early recommendation algorithms were evaluated based on accuracy. However more often than not, showing a user recommendations we're sure they're going to rate 5 stars makes for a boring platform.
 
 If a user rates Captain America 5 stars, an accurate recommendation would be every single avengers movie from there. 
 
-As business analysts, we love to see that dedication to a franchise, however users are more complex than this. 
+![captainamerica](https://github.com/leo-schell/IntentionalDiversity_RecSystems/assets/122314061/2a4377f9-f4d4-4ce3-9154-525ca2b7611b)
 
-In building our models, we need to acknowledge that our users rely on us to know what content is on our platform
-
-Furthermore, we owe visibility to the content creators who make our platforms possible.
-
+As business analysts, we love to see that dedication to a franchise, however users are more complex than this. In building our models, we need to acknowledge that our users rely on us to know what content is on our platform. Furthermore, we owe visibility to the content creators who make our video streaming platforms possible.
 
 ## Data Understanding
-In 2006, Netflix hosted a [competition](https://en.wikipedia.org/wiki/Netflix_Prize) to see who could beat their best model. I used this data for my project. 
+In 2006, Netflix hosted a [competition](https://en.wikipedia.org/wiki/Netflix_Prize) to see who could beat their best model. I used this data for my project sourced from [Kaggle](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data).
 
-The original dataset contains over 100M rows, but with my limited resources I had to sample 1 Million Rows of this data.
-
-My sample contains 1 Million radomly selected ratings of 17,770 movies, shorts, and shows from 290,022 users.
+The original dataset contains 100 million ratings collected from 1999-2005 from 480,189 users of 17,700 movies, shorts, and shows. I was provided with a rating from 1-5, the date of rating, and the video release date which ranged anywhere from 1898 to 2005. With my limited resources I elected to use a sample of 1 Million radomly selected ratings in the same time span from 290,022 users.
 
 ### Data Limitations
 
-The data was collected from end of 1999 to end of 2005 so it is out of date and I was only provided with a rating from 1-5, the date of rating, and the video release date which ranged anywhere from 1898 to 2005.
-
-### Initial Diversity Analysis
+As the data and content is out of date, this project cannot speak to the current state of content diversity on Netflix's platform. 
 
 The data itself does not contain very diverse observations. 
 - The vast majority of content was released from 2000-2005.

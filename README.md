@@ -2,8 +2,8 @@
 
 By Leo Schell Villanueva
 
-## Overview
-This project is a study in promoting different kinds of diversity within simple recommendation algorithms on content based platforms like legacy media and social media.
+# Overview
+This project is a study in promoting different kinds of diversity within simple recommendation algorithms on content based platforms for streaming and social media.
 
 If you are chronically online like I am, you've probably noticed that social media algorithms tend to niche down really quickly. For example, I don't know how I ended up on Scottish Sheep Farmer TikTok, but it is an absolute delight. My favorite farmer, [@seanthesheepman](https://www.tiktok.com/@seanthesheepman?lang=en), posts weekly updates of his dog Katie and through his content my world has become a little richer.
 
@@ -16,32 +16,45 @@ As data professionals, we participate in this conversation in the form of buildi
 - [Data Understanding](#data-understanding)
 - [Models Analyzed](#models-analyzed)
 - [Final Recommender](#final-recommender)
-- [Conclusion](#conclusion)
+- [Conclusion](#conclusion-and-looking-ahead)
 
-## Background
-### Bottom Line: Audiences don't care about accurate predictions.
+# Background
+## Bottom Line: Audiences don't care about accurate predictions.
 
 Early recommendation algorithms were evaluated based on accuracy. However more often than not, showing a user recommendations we're sure they're going to rate 5 stars makes for a boring platform.
 
-If a user rates Captain America 5 stars, an accurate recommendation would be every single avengers movie from there. 
+If a user rates Captain America 5 stars, an accurate recommendation would be every single Avengers movie from there. 
 
 ![captainamerica](https://github.com/leo-schell/IntentionalDiversity_RecSystems/assets/122314061/2a4377f9-f4d4-4ce3-9154-525ca2b7611b)
 
-As business analysts, we love to see that dedication to a franchise, however users are more complex than this. In building our models, we need to acknowledge that our users rely on us to know what content is on our platform. Furthermore, we owe visibility to the content creators who make our video streaming platforms possible.
+As business analysts, we love to see that dedication to a franchise, however users are more complex than this. In building our models, we need to acknowledge that our users rely on us to navigate our platform and understand all of the options we provide. Furthermore, we owe visibility to the content creators who make our video streaming platforms possible.
 
-## Data Understanding
+# Data Understanding
 In 2006, Netflix hosted a [competition](https://en.wikipedia.org/wiki/Netflix_Prize) to see who could beat their best model. I used this data for my project sourced from [Kaggle](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data).
 
-The original dataset contains 100 million ratings collected from 1999-2005 from 480,189 users of 17,700 movies, shorts, and shows. I was provided with a rating from 1-5, the date of rating, and the video release date which ranged anywhere from 1898 to 2005. With my limited resources I elected to use a sample of 1 Million radomly selected ratings in the same time span from 290,022 users.
+The original dataset contains 100 million ratings collected from 1999-2005 from 480,189 users of 17,700 movies, shorts, and shows. I was provided with a rating from 1-5, the date of rating, and the video release date which ranged anywhere from 1898 to 2005. With my limited resources I elected to use a sample of 1 Million radomly selected ratings. 
 
-### Data Limitations
+The resulting dataset contains ratings in the same time span from 290,022 users of XXX videos.
 
-As the data and content is out of date, this project cannot speak to the current state of content diversity on Netflix's platform. 
+## Data Limitations & Initial Diversity Analysis
 
-The data itself does not contain very diverse observations. 
-- The vast majority of content was released from 2000-2005.
-- User engagement is low as most users only rated once.
-- The content itself only contains 12.4% of Top (2) Billed Cast, Director, or Writer(s) are a minority. White women count as minorities in this instance as they are also underrepresented in the above categories.
+As with all rating systems, we have very little negative feedback from users. From this data, I cannot ascertain whether users did not rate content because they don't know that it's there, if they watched and simply chose not to rate, or if they intentionally elected not to engage with the content. 
+
+As the data and video content is out of date, this project cannot speak to the current state of diversity on Netflix's platform. I did perform my own **minority representation analysis** where I looked at each video and marked those where Top (2) Billed Cast, Director, or Writer(s) are a minority. White women count as minorities in this instance as they are also underrepresented in the above categories.
+
+The data itself does not contain very diverse observations. **The vast majority of content was released from 2000-2005.**
+
+<p align="center"><img src="images/Product-graph.png" width=60% height=60% alt="bar graph of product"></p>
+
+
+**User engagement is low as most users only rated once.**
+
+<p align="center"><img src="images/Product-graph.png" width=60% height=60% alt="bar graph of product"></p>
+
+
+**The content itself only contains 12.4% videos with minority representation.**
+
+<p align="center"><img src="images/Product-graph.png" width=60% height=60% alt="bar graph of product"></p>
 
 ## Preprocessing
 
@@ -80,7 +93,7 @@ These models are trained only to examine the similarities between the content av
 
 I used the kNNBaseline model from the Python Surprise package to start and have left my best performing iteration from there.
 
-## Final Recommender
+# Final Recommender
 
 This begins with the Personalized Video Ranker. If a user's personalized recommendations don't contain a video that meets the minority requirement, the algorithm identify nearest neighbors for the top 10 videos output in the the user's personalized video recommendations.
 
@@ -109,7 +122,7 @@ Holdout Will Smith Movie:
 
 Men In Black (2002): 12918
 
-## Conclusion and Looking Ahead
+# Conclusion and Looking Ahead
 
 This was an academic exercise and I only used algorithms that are used by small businesses and entry level data scientists.
 

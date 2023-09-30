@@ -30,7 +30,7 @@ If a user rates Captain America 5 stars, an accurate recommendation would be eve
 As business analysts, we love to see that dedication to a franchise, however users are more complex than this. In building our models, we need to acknowledge that our users rely on us to navigate our platform and understand all of the options we provide. Furthermore, we owe visibility to the content creators who make our video streaming platforms possible.
 
 # Data Understanding
-In 2006, Netflix hosted a [competition](https://en.wikipedia.org/wiki/Netflix_Prize) to see who could beat their best model. I used this data for my project sourced from [Kaggle](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data).
+In 2006, Netflix hosted a [competition](https://en.wikipedia.org/wiki/Netflix_Prize) to see who could beat their most accurate model. I used this data for my project sourced from [Kaggle](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data).
 
 The original dataset contains 100 million ratings collected from 1999-2005 from 480,189 users of 17,700 movies, shorts, and shows. I was provided with a rating from 1-5, the date of rating, and the video release date which ranged anywhere from 1898 to 2005. With my limited resources I elected to use a sample of 1 Million radomly selected ratings. 
 
@@ -56,19 +56,19 @@ The data itself does not contain very diverse observations. **The vast majority 
 
 <p align="center"><img src="images/Product-graph.png" width=60% height=60% alt="bar graph of product"></p>
 
-## Preprocessing
+## Train-Test Split
 
-In order to better understand how user preferences evolve with time, I employed an 'Out of Time' data split that is typically used with content recommendation systems. 
+In order to better understand how user preferences evolve with time, I employed an 'Out of Time' data split that is typically used with content recommendation systems. See [1M_DataSplit](https://github.com/leo-schell/IntentionalDiversity_RecSystems/blob/main/1M_DataSplit.ipynb) for a step-by-step breakdown of how this was achieved.
 
 # Models Analyzed
 
-I took a lot of inspiration from Netflix throughout this project. The platform uses many different algorithms because there is a time and place for each type of recommendation. 
+I drew a lot of inspiration from Netflix throughout this project. The platform uses many different algorithms because there is a time and place for each type of recommendation. 
 
-With the resources and time that I had available, I was able to create a personalized video ranker and a video-to-video recommendation list. 
+With the resources and time that I have available, I was able to create a personalized video ranker and a video-to-video recommendation list. 
 
-## Baseline Model - Biased Baseline
+### Baseline Model - Biased Baseline
 
-In this project, I initially drew a lot of inspiration from the [Balkor](http://snap.stanford.edu/class/cs246-2015/slides/08-recsys2.pdf) solution for the Netflix Prize as this is an academic exercise and I am seeking to understand recommendation systems on a granular level.
+The Biased Baseline model was the baseline model used by [BellKor's](http://snap.stanford.edu/class/cs246-2015/slides/08-recsys2.pdf) solution for the Netflix Prize. As this is an academic exercise and I am seeking to understand recommendation systems on a granular level, I learned a lot from their solution.
 
 This was the baseline model they used. Predictions are calculated using the following formula:
 
@@ -77,6 +77,8 @@ This was the baseline model they used. Predictions are calculated using the foll
 Essentially, this model operates on the assumption that you can predict a user's rating based on their natural bias. In layman's terms:
 
 User's Rating = (mean ratings for the entire sample) + (the difference in how a user tends to rate videos) + (the difference in the content's own average rating)
+
+This model performed extremely well and was very hard to beat.
 
 
 ## Personal Video Ranker
